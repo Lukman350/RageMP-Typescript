@@ -1,0 +1,29 @@
+# node modules
+node_modules
+
+# compiled files
+packages/
+client_packages/
+
+# test coverage
+coverage/
+
+# log files
+logs/
+
+# environment variables, never commit this file
+.env
+
+# ragemp files and folders
+bt.dat
+node.dll
+server.exe
+conf.json
+/bridge
+/plugins
+/bin
+/dotnet
+ragemp-server
+
+# lock files
+package-lock.json

@@ -1,0 +1,62 @@
+{
+  "name": "ragemp-boilerplate",
+  "version": "1.0.0",
+  "description": "RAGEMP server boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "ragemp-server.exe",
+    "start:views": "cd src/views && yarn start",
+    "watch": "nodemon --watch packages --watch client_packages --exec \"./ragemp-server.exe\"",
+    "clean": "rimraf client_packages && rimraf packages",
+    "build:server": "cd src/server && tsc",
+    "build:client": "cd src/client && tsc",
+    "build:views": "cd src/views && yarn build",
+    "build": "npm run clean && npm run build:server && npm run build:client && npm run build:views",
+    "lint": "eslint . --ext .ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wuzi/ragemp-boilerplate.git"
+  },
+  "keywords": [
+    "ragemp",
+    "gta5",
+    "boilerplate",
+    "mongodb"
+  ],
+  "author": "Wuzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wuzi/ragemp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Wuzi/ragemp-boilerplate#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^12.7.1",
+    "@types/ragemp-c": "github:CocaColaBear/types-ragemp-c#v1.0",
+    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#v1.0",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-json": "^3.1.0",
+    "husky": "^3.0.3",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.7.1",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.0.0",
+    "i18next": "^17.0.11",
+    "log4js": "^6.4.0",
+    "mongoose": "^6.0.4",
+    "rage-rpc": "^0.4.0"
+  }
+}
